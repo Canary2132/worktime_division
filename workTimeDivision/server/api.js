@@ -1,7 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req,res)=>{
-  res.send('api works');
+router.post('/', (req,res)=>{
+  console.log(req);
+  res.send(req);
 });
+// router.post('/login', (req,res)=>{
+//   console.log(req);
+//   res.send(req);
+// });
 module.exports = router;

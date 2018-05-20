@@ -1,3 +1,5 @@
-<p>
-  log-in works!
-</p>
+<form action="">
+  <input type="text" name="username" [(ngModel)]="user.login">
+  <input type="text" name="userpassword" [(ngModel)]="user.password">
+  <button (click)="submit(user)">Submit</button>
+</form>
