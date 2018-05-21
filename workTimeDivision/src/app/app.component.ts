@@ -8,5 +8,8 @@ import { LogInComponent } from "./log-in/log-in.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  managerRights:boolean;
+  receiveManagerRights($event){
+    this.managerRights = $event;
+  }
 }

@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/api', api);
@@ -19,3 +19,6 @@ app.get('*', (req, res) => {
 
 const port = 8080;
 app.listen(port,()=>{console.log(`Server run at port ${port}`)});
+
+
+

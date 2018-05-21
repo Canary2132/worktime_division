@@ -8,7 +8,7 @@ export class LoggerService {
   constructor(private http:HttpClient) { }
 
   postUserData(user:User){
-    const body = {login:user.login, password:user.password};
-    return this.http.post('http://localhost:8080/api',body);
+   // const body = {login:user.login, password:user.password};
+    return this.http.post('/api/login',user)
   }
 }

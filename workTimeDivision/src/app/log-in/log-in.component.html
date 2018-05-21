@@ -1,5 +1,6 @@
-<form action="">
+<form method="post" (ngSubmit) = "submit(user)">
   <input type="text" name="username" [(ngModel)]="user.login">
   <input type="text" name="userpassword" [(ngModel)]="user.password">
-  <button (click)="submit(user)">Submit</button>
+  <input type="submit">
 </form>
+<!--<p *ngIf="receivedUser">{{receivedUser[0].login}}-{{receivedUser[0].password}},manager:{{receivedUser[0].manager}}</p>-->
