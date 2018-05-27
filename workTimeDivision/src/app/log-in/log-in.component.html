@@ -1,7 +1,15 @@
-<form method="post" (ngSubmit) = "submit(user)">
-  <input type="text" name="username" [(ngModel)]="user.login">
-  <input type="text" name="userpassword" [(ngModel)]="user.password">
-  <input type="submit">
-</form>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 offset-xs-4">
+      <form method="post" (ngSubmit) = "submit(user)" class="form-group">
+        <input type="text" name="username" [(ngModel)]="user.login" class="form-control">
+        <input type="text" name="userpassword" [(ngModel)]="user.password" class="form-control">
+        <p class="alert alert-danger">{{alert}}</p>
+        <input type="submit" class="btn btn-primary">
+      </form>
+    </div>
+  </div>
+</div>
+
 <!--<p *ngIf="receivedUser">{{receivedUser[0].login}}-{{receivedUser[0].password}},manager:{{receivedUser[0].manager}}</p>-->
-<p style="color: red">{{alert}}</p>
+

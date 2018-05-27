@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {LoggerService} from "../logger.service";
 import {User} from "./user";
 import {FormGroup,FormControl,Validators,FormsModule, } from '@angular/forms';
-import {RouterModule} from "@angular/router";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -18,7 +18,7 @@ export class LogInComponent implements OnInit {
 
   @Output() accessEvent = new EventEmitter<boolean>();
 
-  constructor(public loggerService:LoggerService) { }
+  constructor(public loggerService:LoggerService, private router:Router) { }
 
   submit(user:User){
     this.loggerService.postUserData(user)
@@ -26,7 +26,7 @@ export class LogInComponent implements OnInit {
         (usersData)=>{
           if(usersData) {
             this.logInUser(usersData);
-            this.redirectToUsersPage();
+            this.redirectToUsersPage(usersData);
           }
           else
             this.alert = "wrong login or password ";
@@ -34,12 +34,13 @@ export class LogInComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
-  redirectToUsersPage(){
-    if(sessionStorage.getItem('managerRights')){
-
-    }
+  redirectToUsersPage(usersData){
+    if(usersData.manager){
+      this.router.navigate(['/main/managerPage', usersData.login]);
+    } else this.router.navigate(['/main//userPage', usersData.login]);
   }
 
 
@@ -49,7 +50,7 @@ export class LogInComponent implements OnInit {
     sessionStorage.setItem('managerRights', usersData.manager);
     console.log(sessionStorage);
     this.alert = '';
-    this.accessEvent.emit(this.receivedUser.manager);
+   // this.accessEvent.emit(this.receivedUser.manager);
   }
 
 }
