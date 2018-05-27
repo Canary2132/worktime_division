@@ -1,3 +1,8 @@
-<app-log-in (accessEvent)="receiveManagerRights($event)"></app-log-in>
-<p *ngIf="managerRights">HORAAYYYY</p>
+<router-outlet></router-outlet>
+
+
+<!--<app-log-in (accessEvent)="receiveManagerRights($event)"></app-log-in>-->
+<!--<div *ngIf="managerRights; then managerPage; else workerPage">HORAAYYYY</div>-->
+<!--<ng-template #managerPage><app-manager-page></app-manager-page></ng-template>-->
+<!--<ng-template #workerPage>worker page</ng-template>-->
 

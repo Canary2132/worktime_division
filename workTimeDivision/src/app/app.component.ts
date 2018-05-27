@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgModule  } from '@angular/core';
 import { LogInComponent } from "./log-in/log-in.component";
 
 

@@ -30,9 +30,10 @@ router.post('/login', function (req,res) {
       else{
         if(data[0])
           console.log("access confirmed");
-        else console.log("access denied");
+        else
+          console.log("access denied");
         console.log(data);
-        res.send(data);
+        res.send(data[0]);
       }
     })
 });
