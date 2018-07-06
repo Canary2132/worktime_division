@@ -8,9 +8,7 @@ var UsersSchema = new Schema({
   password: { type: String   },
 },{ versionKey: false });
 
-
 var model = mongoose.model('users', UsersSchema, 'users');
-
 var db = mongoose.connect("mongodb://localhost:27017/workTimeDivision", function(err, response){
   if(err){ console.log( err); }
   else{ console.log('Connected to DB');
